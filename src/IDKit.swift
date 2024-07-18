@@ -79,7 +79,7 @@ public struct Session: Sendable {
 			action: action,
 			signal: encodeSignal(signal),
 			action_description: actionDescription,
-			verification_level: verificationLevel
+			verification_level: verificationLevel.rawValue
 		).encrypt(with: key, nonce: iv), bridgeURL: bridgeURL)
 
 		requestID = response.request_id

@@ -96,7 +96,7 @@ struct CreateRequestPayload: Codable {
 	let action: String
 	let signal: String
 	let action_description: Optional<String>
-	let verification_level: VerificationLevel
+	let verification_level: String
 
 	func encrypt(with key: SymmetricKey, nonce: AES.GCM.Nonce) throws -> Payload {
 		let sealedBox = try AES.GCM.seal(JSONEncoder().encode(self), using: key, nonce: nonce)
